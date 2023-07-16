@@ -14,11 +14,15 @@
 </div>
 @foreach (var item in Model)
 {
-    <article>
-        <h1>@item.Title</h1>
-        <video width=300 height=300 controls>
-            <source src="https://localhost:7065/Videos/@item.VideoLink" type="video/mp4">
-        </video>
-    </article>
+    <a href="https://localhost:7065/posts/details/@item.Id">
+        <article>
+            <h2>@item.Title</h2>
+            <video width=300 height=500 controls>
+                <source src="https://localhost:7065/Videos/@item.VideoLink" type="video/mp4">
+            </video>
+            <p>By @item.Creator.Name</p>
+            <p>On @item.PublishDate</p>
+        </article>
+    </a>
 }
 
